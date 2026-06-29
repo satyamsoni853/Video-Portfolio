@@ -26,9 +26,7 @@ const Hero = () => {
   };
 
   const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !videoRef.current.muted;
-    setIsMuted(videoRef.current.muted);
+    setIsMuted((prev) => !prev);
   };
 
   const VideoControls = () => (
@@ -77,11 +75,11 @@ const Hero = () => {
     <section id="home" className="w-full bg-[#0a0a0a]">
 
       {/* ── Video ── */}
-      <div className="relative w-full aspect-video max-h-[75vh]">
+      <div className="relative w-full aspect-video md:aspect-auto md:h-screen">
         <video
           ref={videoRef}
           autoPlay
-          muted
+          muted={isMuted}
           playsInline
           className="w-full h-full object-cover"
           onEnded={() => setIsPlaying(false)}
