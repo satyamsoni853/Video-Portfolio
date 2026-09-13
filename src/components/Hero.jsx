@@ -114,11 +114,32 @@ const Hero = () => {
               <span key={t} className="px-3 py-1 rounded-full border border-white/20 text-white/70 text-xs font-semibold tracking-wide backdrop-blur-sm bg-black/20">{t}</span>
             ))}
           </div>
-          <p data-aos="fade-up" data-aos-delay="280" className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+          <p data-aos="fade-up" data-aos-delay="280" className="text-white/70 text-base lg:text-lg leading-relaxed mb-5 max-w-lg">
             2.5+ years building enterprise-ready web applications — from Spring Boot
             backends to pixel-perfect React frontends. Currently at{' '}
             <span className="text-white font-semibold">Kapoor Wealth</span> as MERN Stack Developer.
           </p>
+
+          {/* Golden Sands featured work badge */}
+          <a
+            href="#projects"
+            data-aos="fade-up"
+            data-aos-delay="310"
+            className="inline-flex items-center gap-2.5 mb-7 px-4 py-2 rounded-full border border-[#C9A84C]/40 bg-[#C9A84C]/10 backdrop-blur-sm hover:bg-[#C9A84C]/20 hover:border-[#C9A84C]/70 transition-all duration-300 group w-fit"
+          >
+            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#C9A84C] flex-shrink-0">
+              <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </span>
+            <span className="text-xs font-bold text-[#C9A84C]/80 group-hover:text-[#C9A84C] transition-colors">
+              Featured: <span className="text-white/90">Golden Sands Estate</span> — Full real estate tech suite
+            </span>
+            <svg className="w-3.5 h-3.5 text-[#C9A84C]/60 group-hover:text-[#C9A84C] group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+
           <div data-aos="fade-up" data-aos-delay="340" className="flex flex-wrap gap-3">
             <a href="#projects" className="px-6 py-3 rounded-full bg-white text-[#08090f] font-bold hover:bg-white/90 transition-all duration-300 text-sm shadow-lg">View My Work</a>
             <a href="#contact" className="px-6 py-3 rounded-full border border-white/40 text-white font-bold hover:border-white/70 hover:bg-white/10 transition-all duration-300 text-sm backdrop-blur-sm">Contact Me</a>
@@ -150,11 +171,30 @@ const Hero = () => {
             <span key={t} className="px-3 py-1 rounded-full border border-white/20 text-white/60 text-[11px] font-semibold tracking-wide bg-white/5">{t}</span>
           ))}
         </div>
-        <p className="text-white/60 text-sm leading-relaxed mb-5">
+        <p className="text-white/60 text-sm leading-relaxed mb-4">
           2.5+ years building enterprise-ready web apps — from Spring Boot backends
           to pixel-perfect React frontends. Currently at{' '}
           <span className="text-white font-semibold">Kapoor Wealth</span>.
         </p>
+
+        {/* Golden Sands featured work badge — mobile */}
+        <a
+          href="#projects"
+          className="inline-flex items-center gap-2 mb-4 px-3.5 py-1.5 rounded-full border border-[#C9A84C]/40 bg-[#C9A84C]/10 group w-fit"
+        >
+          <span className="flex items-center justify-center w-4 h-4 rounded-full bg-[#C9A84C] flex-shrink-0">
+            <svg className="w-2.5 h-2.5 text-black" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </span>
+          <span className="text-[11px] font-bold text-[#C9A84C]/80">
+            Featured: <span className="text-white/85">Golden Sands Estate</span>
+          </span>
+          <svg className="w-3 h-3 text-[#C9A84C]/60" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+
         <div className="flex flex-wrap gap-3 mb-4">
           <a href="#projects" className="px-5 py-2.5 rounded-full bg-white text-[#08090f] font-bold text-sm shadow-lg">View My Work</a>
           <a href="#contact" className="px-5 py-2.5 rounded-full border border-white/30 text-white font-bold text-sm">Contact Me</a>

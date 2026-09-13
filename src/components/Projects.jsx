@@ -1,7 +1,30 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const allProjects = [
+  {
+    id: 0,
+    name: 'Golden Sands Estate — Full-Stack Real Estate Suite',
+    desc: 'End-to-end real estate tech ecosystem built for Kapoor Wealth Partners using the MERN stack. Delivered the full public website, an internal CRM for lead & deal management, a cross-platform mobile app for agents & buyers, a support dashboard for client tickets, and several auxiliary tools — all under one cohesive design system.',
+    tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Next.js', 'React Native', 'MERN', 'Full Stack'],
+    demo: 'https://goldensandsestate.com/',
+    code: '',
+    image: '/projects/goldensands.png',
+    featured: true,
+    flagship: true,
+    client: 'Kapoor Wealth Partners',
+    links: [
+      { label: 'Website', url: 'https://goldensandsestate.com/', icon: '🌐' },
+      { label: 'CRM', url: 'https://crm.goldensandsestate.com/', icon: '📊' },
+      { label: 'Support', url: 'https://support.goldensandsestate.com/login', icon: '🎧' },
+    ],
+    highlights: [
+      'Public website — luxury real estate listings, AI-powered search (GoldenGenie), multilingual (5 languages)',
+      'Internal CRM — lead pipeline, deal tracking, agent management & analytics (MERN stack)',
+      'Mobile app — cross-platform React Native app for agents & buyers with live property alerts',
+      'Support dashboard — client ticketing, SLA tracking, and agent escalation flow',
+    ],
+  },
   {
     id: 1,
     name: 'Sunspots Holidays',
@@ -163,7 +186,8 @@ const allProjects = [
   },
 ];
 
-const featured = allProjects.filter(p => p.featured);
+const flagship = allProjects.find(p => p.flagship);
+const featured = allProjects.filter(p => p.featured && !p.flagship);
 const extra    = allProjects.filter(p => !p.featured);
 
 /* ── Icons ── */
@@ -171,6 +195,98 @@ const ExternalIcon = () => (
   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
   </svg>
+);
+
+/* ── Flagship card (full-width hero) ── */
+const FlagshipCard = ({ project }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-60px' }}
+    transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+    className="group relative w-full rounded-3xl overflow-hidden border border-[#C9A84C]/30 bg-gradient-to-br from-[#1a1508] via-[#111111] to-[#0d0d0d] shadow-[0_0_60px_rgba(201,168,76,0.08)] hover:shadow-[0_0_80px_rgba(201,168,76,0.18)] transition-all duration-500 mb-10"
+  >
+    {/* Golden shimmer border top */}
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
+
+    <div className="flex flex-col lg:flex-row">
+      {/* Left: Screenshot */}
+      <div className="relative lg:w-[52%] aspect-video lg:aspect-auto lg:min-h-[340px] overflow-hidden bg-black/50 flex-shrink-0">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          onError={(e) => { e.target.style.display = 'none'; }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111111]/80 hidden lg:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent lg:hidden" />
+
+        {/* Client badge on image */}
+        <div className="absolute top-4 left-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#C9A84C] text-black text-[10px] font-black uppercase tracking-widest shadow-lg">
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Flagship Project
+          </span>
+        </div>
+      </div>
+
+      {/* Right: Info */}
+      <div className="flex flex-col justify-between p-7 lg:p-10 flex-1">
+        {/* Client + Live links row */}
+        <div className="flex items-start justify-between gap-4 mb-5">
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#C9A84C]/70 mb-1">Client</p>
+            <p className="text-white/80 text-sm font-semibold">{project.client}</p>
+          </div>
+          <div className="flex flex-wrap gap-2 justify-end">
+            {(project.links || [{ label: 'Live', url: project.demo, icon: '🌐' }]).map(link => (
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#C9A84C] text-black text-[11px] font-black hover:bg-[#e0ba58] transition-colors shadow-lg shadow-[#C9A84C]/20 whitespace-nowrap"
+              >
+                <span>{link.icon}</span>
+                {link.label} <ExternalIcon />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Title */}
+        <div className="mb-5">
+          <h3 className="text-xl lg:text-2xl font-black text-white leading-tight group-hover:text-[#C9A84C] transition-colors duration-300">
+            {project.name}
+          </h3>
+          <p className="text-white/45 text-sm leading-relaxed mt-3">{project.desc}</p>
+        </div>
+
+        {/* Highlights */}
+        <div className="mb-6">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#C9A84C]/60 mb-3">What I Built</p>
+          <ul className="space-y-2">
+            {project.highlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-2.5 text-xs text-white/55 leading-relaxed">
+                <span className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 pt-5 border-t border-white/[0.07]">
+          {project.tags.map(t => (
+            <span key={t} className="text-[10px] font-black uppercase tracking-wide px-2.5 py-1 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/25 text-[#C9A84C]/80">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </motion.div>
 );
 
 /* ── Single card ── */
@@ -287,7 +403,10 @@ const Projects = () => {
           </motion.button>
         </motion.div>
 
-        {/* Featured 6 */}
+        {/* Flagship project — full-width hero card */}
+        {flagship && <FlagshipCard project={flagship} />}
+
+        {/* Featured grid (excludes flagship) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {featured.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
