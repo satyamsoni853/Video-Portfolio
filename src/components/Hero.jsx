@@ -115,7 +115,7 @@ const Hero = () => {
             ))}
           </div>
           <p data-aos="fade-up" data-aos-delay="280" className="text-white/70 text-base lg:text-lg leading-relaxed mb-5 max-w-lg">
-            2.5+ years building enterprise-ready web applications — from Spring Boot
+            3+ years building enterprise-ready web applications — from Spring Boot
             backends to pixel-perfect React frontends. Currently at{' '}
             <span className="text-white font-semibold">Kapoor Wealth</span> as MERN Stack Developer.
           </p>
@@ -172,7 +172,7 @@ const Hero = () => {
           ))}
         </div>
         <p className="text-white/60 text-sm leading-relaxed mb-4">
-          2.5+ years building enterprise-ready web apps — from Spring Boot backends
+          3+ years building enterprise-ready web apps — from Spring Boot backends
           to pixel-perfect React frontends. Currently at{' '}
           <span className="text-white font-semibold">Kapoor Wealth</span>.
         </p>
@@ -209,7 +209,7 @@ const Hero = () => {
       <div className="bg-[#0a0a0a] px-6 md:px-8 lg:px-16 py-5 md:py-8 border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-x-8 gap-y-4 md:gap-10 items-center">
           {[
-            { value: '2.5+', label: 'Years Exp.' },
+            { value: '3+', label: 'Years Exp.' },
             { value: '16+', label: 'Projects' },
             { value: '20+', label: 'Tech Stack' },
           ].map(s => (

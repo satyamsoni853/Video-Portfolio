@@ -105,7 +105,7 @@ const About = () => {
           <p className="text-lg font-medium mb-10 leading-relaxed max-w-3xl text-slate-300">
             Hi, my name is{' '}
             <span className="text-[#38bdf8] text-xl font-black mx-1 tracking-wide uppercase">Satyam Soni</span>,
-            a results-driven Full Stack Developer based in Mohali, Punjab, with 2.5+ years of experience
+            a results-driven Full Stack Developer based in Mohali, Punjab, with 3+ years of experience
             building large-scale, enterprise-ready web applications across Java, Python, and MERN ecosystems.
           </p>
 
