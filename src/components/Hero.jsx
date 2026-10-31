@@ -75,7 +75,7 @@ const Hero = () => {
     <section id="home" className="w-full bg-[#0a0a0a]">
 
       {/* ── Video ── */}
-      <div className="relative w-full aspect-video md:aspect-auto md:h-screen">
+      <div className="relative w-full aspect-video md:aspect-auto md:h-screen md:h-[100svh] md:min-h-[640px]">
         <video
           ref={videoRef}
           autoPlay
@@ -92,7 +92,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
 
         {/* Desktop text overlay — hidden on mobile */}
-        <div className="hidden md:flex absolute inset-0 flex-col justify-end px-16 pb-16 max-w-4xl">
+        <div className="hidden md:flex absolute inset-0 flex-col justify-end px-8 lg:px-16 pb-16 max-w-4xl">
           <h1
             data-aos="fade-up"
             data-aos-delay="80"
@@ -147,7 +147,7 @@ const Hero = () => {
         </div>
 
         {/* Desktop video controls */}
-        <div className="hidden md:flex absolute bottom-8 right-12 z-10">
+        <div className="hidden md:flex absolute bottom-8 right-8 lg:right-12 z-10">
           <VideoControls />
         </div>
       </div>
@@ -206,8 +206,8 @@ const Hero = () => {
       </div>
 
       {/* ── Stats bar ── */}
-      <div className="bg-[#0a0a0a] px-6 md:px-16 py-5 md:py-8 border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto flex gap-8 md:gap-10 items-center">
+      <div className="bg-[#0a0a0a] px-6 md:px-8 lg:px-16 py-5 md:py-8 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-x-8 gap-y-4 md:gap-10 items-center">
           {[
             { value: '2.5+', label: 'Years Exp.' },
             { value: '16+', label: 'Projects' },

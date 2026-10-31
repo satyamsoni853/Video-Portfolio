@@ -234,7 +234,7 @@ const FlagshipCard = ({ project }) => (
       {/* Right: Info */}
       <div className="flex flex-col justify-between p-7 lg:p-10 flex-1">
         {/* Client + Live links row */}
-        <div className="flex items-start justify-between gap-4 mb-5">
+        <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#C9A84C]/70 mb-1">Client</p>
             <p className="text-white/80 text-sm font-semibold">{project.client}</p>

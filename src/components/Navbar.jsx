@@ -57,13 +57,13 @@ const Navbar = () => {
         <a
           href="#home"
           className="text-white leading-none select-none"
-          style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2rem' }}
+          style={{ fontFamily: "'Great Vibes', cursive", fontSize: 'clamp(1.5rem, 6vw, 2rem)' }}
         >
           Satyam Soni
         </a>
 
         {/* ── Desktop nav links ── */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-4 lg:gap-7">
           {navLinks.map(({ label, href }) => {
             const id = href.replace('#', '');
             const isActive = active === id;
@@ -138,7 +138,7 @@ const Navbar = () => {
         {/* spacer for nav height */}
         <div className="h-[64px] shrink-0" />
 
-        <div className="flex flex-col justify-center flex-1 px-8 pb-10 gap-1">
+        <div className="flex flex-col justify-center flex-1 px-8 pb-10 gap-1 overflow-y-auto">
 
           {navLinks.map(({ label, href }, i) => (
             <a
